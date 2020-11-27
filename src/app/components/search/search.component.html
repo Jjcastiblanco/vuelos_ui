@@ -1,0 +1,47 @@
+<h1> Busacr Pasajero</h1>
+<hr>
+
+<div class='row'>
+    <div class="col">
+        <input #termino type="number" (keyup)="buscar(termino.value)" class="form-control">
+    </div>
+
+</div>
+
+<h3 class="mt-5">
+    Formulario de pasajeros
+</h3>
+<form *ngFor="let dato of pasajero">
+    <div class="form-row mt-5">
+        <div class="form-group col-md-6">
+            <label for="vuelo">Id Vuelo</label>
+            <input type="text" [(ngModel)]="dato.idVuelo" class="form-control" id="id" name="vuelo">
+        </div>
+        <div class="form-group col-md-6">
+            <label for="id">Id Pasajero</label>
+            <input type="text" disabled="disabled" [(ngModel)]="dato.idpasajero" class="form-control" id="id" name="id">
+        </div>
+        <div class="form-group col-md-6">
+            <label for="Cedula">Cedula</label>
+            <input type="number" disabled="disabled" [(ngModel)]="dato.ccPasajero" class="form-control" id="Cedula" name="cedula">
+        </div>
+        <div class="form-group col-md-6">
+            <label for="nombre">Nombre</label>
+            <input type="text" [(ngModel)]="dato.nomPasajero" class="form-control" id="nombre" name="nombre">
+
+        </div>
+        <div class="form-group col-md-6">
+            <label for="apellido">Apellido</label>
+            <input type="text" [(ngModel)]="dato.apellidoPasajero" class="form-control" id="apellido" name="apellido">
+        </div>
+    </div>
+    <div class="form-group">
+
+    </div>
+    <div class="form-group">
+
+    </div>
+    <button (click)="actulizarUsuario(dato)" class="btn btn-primary md-6">Actualizar</button>
+    <button (click)="borrarUsuario(dato)" class="btn btn-primary ml-3">Borrar</button>
+
+</form>

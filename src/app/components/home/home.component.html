@@ -1,0 +1,14 @@
+<h1> Listado de Vuelos</h1>
+<hr>
+<div class="card-columns">
+    <div class="card" *ngFor="let data of datos">
+        <img src="/src/assets/img/logo.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+            <h5 class="card-title ">Informacion del vuelo</h5>
+            <p class="card-text">Numero de vuelo: {{data.idvuelo}}</p>
+            <p class="card-text">Fecha: {{data.fecha}}</p>
+            <p class="card-text">Hora: {{data.hora}}</p>
+            <a [routerLink]="['/pasajeros',data.idvuelo]" class="btn btn-primary w-100">Selecionar</a>
+        </div>
+    </div>
+</div>

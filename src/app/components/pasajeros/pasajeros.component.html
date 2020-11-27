@@ -1,0 +1,63 @@
+<h1> Pasajero de Vuelo</h1>
+<hr>
+<div class="row">
+    <div class="col text-right">
+        <button [routerLink]="['/home']" class=" btn btn-primary">
+            <i class="fa fa-plus"></i>
+            Regresar
+        </button>
+        <button [routerLink]="['/pasajero']" class=" btn btn-primary ml-3">
+            <i class="fa fa-plus"></i>
+            Nuevo
+        </button>
+    </div>
+</div>
+
+
+<h3>
+    Listado de pasajeros en este vuelo
+</h3>
+<select class="form-control form-control-lg mt-3">
+    <option *ngFor="let dato of pasajero">{{dato.nomPasajero}} {{dato.apellidoPasajero}}</option>
+  </select>
+<h3 class="mt-5">
+    Formulario de pasajeros
+</h3>
+<form *ngFor="let dato of pasajero">
+    <div class="form-row mt-5">
+        <div class="form-group col-md-6">
+            <label for="vuelo">Id Vuelo</label>
+            <input type="text" [(ngModel)]="dato.idVuelo" class="form-control" id="id" name="vuelo">
+        </div>
+        <div class="form-group col-md-6">
+            <label for="id">Id Pasajero</label>
+            <input type="text" disabled="disabled" [(ngModel)]="dato.idpasajero" class="form-control" id="id" name="id">
+        </div>
+        <div class="form-group col-md-6">
+            <label for="Cedula">Cedula</label>
+            <input type="number" disabled="disabled" [(ngModel)]="dato.ccPasajero" class="form-control" id="Cedula" name="cedula">
+        </div>
+        <div class="form-group col-md-6">
+            <label for="nombre">Nombre</label>
+            <input type="text" [(ngModel)]="dato.nomPasajero" class="form-control" id="nombre" name="nombre">
+
+        </div>
+        <div class="form-group col-md-6">
+            <label for="apellido">Apellido</label>
+            <input type="text" [(ngModel)]="dato.apellidoPasajero" class="form-control" id="apellido" name="apellido">
+        </div>
+    </div>
+    <div class="form-group">
+
+    </div>
+    <div class="form-group">
+
+    </div>
+    <button (click)="actulizarUsuario(dato)" class="btn btn-primary md-6">Actualizar</button>
+    <button (click)="borrarUsuario(dato)" class="btn btn-primary ml-3">Borrar</button>
+
+</form>
+
+<div style="width: 100%; height: 50px; margin-top: 1%; text-align: center" class="text-dark bg-light rounded">
+    <h1 class="font-weight-bold">NUEVO CURSO</h1>
+</div>
